@@ -9,18 +9,20 @@ body {
     font-family: "Raleway", sans-serif;
 }
 
+.container {
+    margin: 50px auto 0 auto;
+    width: 80%;
+}
+
 .header {
-    position: absolute;
-    left: 50%;
-    top: 15%;
-    transform: translate(-45%, -50%);
-    width: 60%;
-    /* margin: 50px auto 0 auto; */
+    width: 80%;
+    margin: 50px auto 0 auto;
     animation: opac 0.8s;
+    text-align: center;
 }
 
 .header img {
-    display: inline; 
+    display: inline-block;
     width: 50px; 
     height: auto; 
     margin: 0 20px 0 20px;
@@ -34,34 +36,37 @@ body {
     animation: highlight 0.3s;
 }
 
-.view {
-    text-align: right;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-	display: none;
-}
-
 .home {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    display: block;
     animation: opac 0.8s;
+    width: 30%;
+    margin: 15% auto auto auto;
 }
 
 .home h1 {
     font-size: 64px;
-    /* text-align: center; */
+    text-align: center;
+}
+
+.view {
+    display: inline-block;
+    /* width: 40%; */
+    margin: auto;
+    text-align: right;
+    /* position: relative; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%,-50%); */
+	display: none;
 }
 
 .reset {
     display: none;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    text-align: center;
+    /* position: absolute; */
+    /* top: 80%; */
+    /* left: 50%; */
+    /* transform: translate(-50%,-50%); */
     animation: opac 0.8s;
 }
 
