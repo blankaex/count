@@ -1,11 +1,10 @@
 var app = new Vue({
     el: '#app',
     data: {
-        message: 'Hello Vue!'
+        message: 'Count'
     },
 	methods: {
 		showView: function(id) {
-            console.log(id)
             var leaders = ["elf", "royal", "witch", "dragon", "necromancer", "vampire", "bishop", "nemesis"]
 
             for(i = 0; i < leaders.length; i++)
@@ -16,11 +15,28 @@ var app = new Vue({
             {
                 document.getElementById(id).style.display = "block"
                 document.getElementById("home").style.display = "none"
+                document.getElementById("reset").style.display = "block"
             }
             else
             {
                 document.getElementById(id).style.display = "none"
                 document.getElementById("home").style.display = "block"
+                document.getElementById("reset").style.display = "none"
+            }
+		},
+		inc: function(id) {
+            document.getElementById(id).innerText++
+		},
+		dec: function(e) {
+            document.getElementById(id).innerText--
+            e.preventDefault();
+		},
+		reset: function() {
+            console.log("hi")
+            var counters = document.getElementsByClassName("counter")
+            for(i = 0; i < counters.length; i++)
+            {
+                counters[i].innerText = 0
             }
 		}
   	}
