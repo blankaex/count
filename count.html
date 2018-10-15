@@ -4,31 +4,58 @@
     <title>Count</title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!-- <script async type="text/javascript" src="js/script.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 
 <body>
-    <div class="header">
-        <img src="img/elf.png">
-        <img src="img/royal.png">
-        <img src="img/witch.png">
-        <img src="img/dragon.png">
-        <img src="img/necromancer.png">
-        <img src="img/vampire.png">
-        <img src="img/nemesis.png">
+    <div id="app">
+        <div class="header">
+            <img src="img/elf.png" v-on:click="showView('elf')">
+            <img src="img/royal.png" v-on:click="showView('royal')">
+            <img src="img/witch.png" v-on:click="showView('witch')">
+            <img src="img/dragon.png" v-on:click="showView('dragon')">
+            <img src="img/necromancer.png" v-on:click="showView('necromancer')">
+            <img src="img/vampire.png" v-on:click="showView('vampire')">
+            <img src="img/bishop.png" v-on:click="showView('bishop')">
+            <img src="img/nemesis.png" v-on:click="showView('nemesis')">
+        </div>
+
+        <div id="home" class="home">
+            <h1>{{ message }}<h1>
+        </div>
+
+        <div id="elf" class="view">
+           1
+        </div>
+
+        <div id="royal" class="view">
+           2
+        </div>
+
+        <div id="witch" class="view">
+           3
+        </div>
+
+        <div id="dragon" class="view">
+           4
+        </div>
+
+        <div id="necromancer" class="view">
+           5
+        </div>
+
+        <div id="vampire" class="view">
+           6
+        </div>
+
+        <div id="bishop" class="view">
+           7
+        </div>
+
+        <div id="nemesis" class="view">
+           8
+        </div>
     </div>
 
-	<div id="app">
-		{{ message }}
-	</div>
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
-
-<script>
-	var app = new Vue({
-		el: '#app',
-		data: {
-			message: 'Hello Vue!'
-		}
-	})
-</script>
