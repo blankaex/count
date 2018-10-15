@@ -1,0 +1,34 @@
+<html lang="en-US">
+
+<head>
+    <title>Count</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- <script async type="text/javascript" src="js/script.js"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div class="header">
+        <img src="img/elf.png">
+        <img src="img/royal.png">
+        <img src="img/witch.png">
+        <img src="img/dragon.png">
+        <img src="img/necromancer.png">
+        <img src="img/vampire.png">
+        <img src="img/nemesis.png">
+    </div>
+
+	<div id="app">
+		{{ message }}
+	</div>
+</body>
+
+<script>
+	var app = new Vue({
+		el: '#app',
+		data: {
+			message: 'Hello Vue!'
+		}
+	})
+</script>
