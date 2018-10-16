@@ -5,12 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 
 <body>
-    <div id="app" class="container">
-        <div class="header">
+    <div id="app" class="container" @click.right.prevent>
+        <ul class="header nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
             <img src="img/elf.png" @click="showView('elf')">
             <img src="img/royal.png" @click="showView('royal')">
             <img src="img/witch.png" @click="showView('witch')">
@@ -19,7 +20,7 @@
             <img src="img/vampire.png" @click="showView('vampire')">
             <img src="img/bishop.png" @click="showView('bishop')">
             <img src="img/nemesis.png" @click="showView('nemesis')">
-        </div>
+        </ul>
 
         <div id="home" class="home">
             <h1>{{ message }}</h1>
@@ -27,14 +28,22 @@
         </div>
 
         <div id="elf" class="view">
-            <h1 @click="inc('fairy')" @dblclick="dec('fairy')">フェアリー枚数: <span id="fairy" class="counter">0</span></h1>
+            <h1 @click="inc('fairy')" @click.right.prevent="dec('fairy')">フェアリー枚数: <span id="fairy" class="counter">0</span></h1>
         </div>
 
         <div id="royal" class="view">
-            <h1 @click="inc('kubikazari')">首飾り枚数: <span id="kubikazari" class="counter">0</span></h1>
-            <h1 @click="inc('shouken')">小剣枚数: <span id="shouken" class="counter">0</span></h1>
-            <h1 @click="inc('sakazuki')">杯枚数: <span id="sakazuki" class="counter">0</span></h1>
-            <h1 @click="inc('kutsu')">靴枚数: <span id="kutsu" class="counter">0</span></h1>
+            <div @click="inc('kubikazari')" @click.right.prevent="dec('kubikazari')">
+                <h1>首飾り枚数: <span id="kubikazari" class="counter">0</span></h1>
+            </div>
+            <div @click="inc('shouken')" @click.right.prevent="dec('shouken')">
+                <h1>小剣枚数: <span id="shouken" class="counter">0</span></h1>
+            </div>
+            <div @click="inc('sakazuki')" @click.right.prevent="dec('sakazuki')">
+                <h1>杯枚数: <span id="sakazuki" class="counter">0</span></h1>
+            </div>
+            <div @click="inc('kutsu')" @click.right.prevent="dec('kutsu')">
+                <h1>靴枚数: <span id="kutsu" class="counter">0</span></h1>
+            </div>
         </div>
 
         <div id="witch" class="view">
@@ -42,7 +51,7 @@
         </div>
 
         <div id="dragon" class="view">
-            4
+            <h1 @click="inc('toiki')" @click.right.prevent="dec('toiki')">吐息枚数: <span id="toiki" class="counter">0</span></h1>
         </div>
 
         <div id="necromancer" class="view">
@@ -50,7 +59,7 @@
         </div>
 
         <div id="vampire" class="view">
-            <h1 @click="inc('jishou')" @scroll.passive="dec('jishou')">自傷回数: <span id="jishou" class="counter">0</span></h1>
+            <h1 @click="inc('jishou')" @click.right.prevent="dec('jishou')">自傷回数: <span id="jishou" class="counter">0</span></h1>
         </div>
 
         <div id="bishop" class="view">
@@ -58,13 +67,22 @@
         </div>
 
         <div id="nemesis" class="view">
-            8
+            <div class="view-left">
+            <h1 @click="dec('lishena-1')" @click.right.prevent="inc('lishena-1')">自傷回数: <span id="lishena-1" class="counter">10</span></h1>
+            <h1 @click="dec('lishena-2')" @click.right.prevent="inc('lishena-2')">自傷回数: <span id="lishena-2" class="counter">10</span></h1>
+            <h1 @click="dec('lishena-3')" @click.right.prevent="inc('lishena-3')">自傷回数: <span id="lishena-3" class="counter">10</span></h1>
+            <h1 @click="dec('lishena-4')" @click.right.prevent="inc('lishena-4')">自傷回数: <span id="lishena-4" class="counter">10</span></h1>
+            </div>
+            <div class="view-left">
+            <h1 @click="inc('lishena-2')" @click.right.prevent="dec('lishena-2')">自傷回数: <span id="lishena-2" class="counter">0</span></h1>
+            </div>
         </div>
 
         <div id=reset class="reset" @click="reset">
-            <h1>Reset</h1>
+            <h1>リセット</h1>
         </div>
     </div>
 
     <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>

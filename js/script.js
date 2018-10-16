@@ -13,7 +13,7 @@ var app = new Vue({
 
             if(document.getElementById(id).style.display === "none")
             {
-                document.getElementById(id).style.display = "block"
+                document.getElementById(id).style.display = "flex"
                 document.getElementById("home").style.display = "none"
                 document.getElementById("reset").style.display = "block"
             }
@@ -27,9 +27,9 @@ var app = new Vue({
 		inc: function(id) {
             document.getElementById(id).innerText++
 		},
-		dec: function(e) {
-            document.getElementById(id).innerText--
-            e.preventDefault();
+		dec: function(id) {
+            if(document.getElementById(id).innerText > 0)
+                document.getElementById(id).innerText--
 		},
 		reset: function() {
             console.log("hi")
