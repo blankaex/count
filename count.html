@@ -4,77 +4,81 @@
     <title>Count</title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 
 <body>
     <div id="app" class="container" @click.right.prevent>
         <ul class="header nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
-            <img src="img/elf.png" @click="showView('elf')">
-            <img src="img/royal.png" @click="showView('royal')">
-            <img src="img/witch.png" @click="showView('witch')">
-            <img src="img/dragon.png" @click="showView('dragon')">
-            <img src="img/necromancer.png" @click="showView('necromancer')">
-            <img src="img/vampire.png" @click="showView('vampire')">
-            <img src="img/bishop.png" @click="showView('bishop')">
-            <img src="img/nemesis.png" @click="showView('nemesis')">
+            <li><a href="#elf" data-toggle="tab"><img src="img/elf.png"></a></li>
+            <li><a href="#royal" data-toggle="tab"><img src="img/royal.png"></a></li>
+            <li><a href="#witch" data-toggle="tab"><img src="img/witch.png"></a></li>
+            <li><a href="#dragon" data-toggle="tab"><img src="img/dragon.png"></a></li>
+            <li><a href="#necromancer" data-toggle="tab"><img src="img/necromancer.png"></a></li>
+            <li><a href="#vampire" data-toggle="tab"><img src="img/vampire.png"></a></li>
+            <li><a href="#bishop" data-toggle="tab"><img src="img/bishop.png"></a></li>
+            <li><a href="#nemesis" data-toggle="tab"><img src="img/nemesis.png"></a></li>
         </ul>
 
-        <div id="home" class="home">
-            <h1>{{ message }}</h1>
-            <hr>
-        </div>
+        <!-- <div id="home" class="home"> -->
+        <!--     <h1>{{ message }}</h1> -->
+        <!--     <hr> -->
+        <!-- </div> -->
 
-        <div id="elf" class="view">
-            <h1 @click="inc('fairy')" @click.right.prevent="dec('fairy')">フェアリー枚数: <span id="fairy" class="counter">0</span></h1>
-        </div>
-
-        <div id="royal" class="view">
-            <div @click="inc('kubikazari')" @click.right.prevent="dec('kubikazari')">
-                <h1>首飾り枚数: <span id="kubikazari" class="counter">0</span></h1>
+        <div class="tab-content">
+            <div id="elf" role="tabpanel" class="tab-pane fade in active text-center">
+                <div @click="inc('fairy')" @click.right.prevent="dec('fairy')">
+					<h1>フェアリー枚数: <span id="fairy" class="counter">0</span></h1>
+				</div>
             </div>
-            <div @click="inc('shouken')" @click.right.prevent="dec('shouken')">
-                <h1>小剣枚数: <span id="shouken" class="counter">0</span></h1>
+
+            <div id="royal" role="tabpanel" class="tab-pane fade in active text-center">
+                <div @click="inc('kubikazari')" @click.right.prevent="dec('kubikazari')">
+                    <h1>首飾り枚数: <span id="kubikazari" class="counter">0</span></h1>
+                </div>
+                <div @click="inc('shouken')" @click.right.prevent="dec('shouken')">
+                    <h1>小剣枚数: <span id="shouken" class="counter">0</span></h1>
+                </div>
+                <div @click="inc('sakazuki')" @click.right.prevent="dec('sakazuki')">
+                    <h1>杯枚数: <span id="sakazuki" class="counter">0</span></h1>
+                </div>
+                <div @click="inc('kutsu')" @click.right.prevent="dec('kutsu')">
+                    <h1>靴枚数: <span id="kutsu" class="counter">0</span></h1>
+                </div>
             </div>
-            <div @click="inc('sakazuki')" @click.right.prevent="dec('sakazuki')">
-                <h1>杯枚数: <span id="sakazuki" class="counter">0</span></h1>
+
+            <div id="witch" role="tabpanel" class="tab-pane fade in active">
+                3
             </div>
-            <div @click="inc('kutsu')" @click.right.prevent="dec('kutsu')">
-                <h1>靴枚数: <span id="kutsu" class="counter">0</span></h1>
+
+            <div id="dragon" role="tabpanel" class="tab-pane fade in active">
+                <h1 @click="inc('toiki')" @click.right.prevent="dec('toiki')">吐息枚数: <span id="toiki" class="counter">0</span></h1>
             </div>
-        </div>
 
-        <div id="witch" class="view">
-            3
-        </div>
-
-        <div id="dragon" class="view">
-            <h1 @click="inc('toiki')" @click.right.prevent="dec('toiki')">吐息枚数: <span id="toiki" class="counter">0</span></h1>
-        </div>
-
-        <div id="necromancer" class="view">
-            5
-        </div>
-
-        <div id="vampire" class="view">
-            <h1 @click="inc('jishou')" @click.right.prevent="dec('jishou')">自傷回数: <span id="jishou" class="counter">0</span></h1>
-        </div>
-
-        <div id="bishop" class="view">
-            7
-        </div>
-
-        <div id="nemesis" class="view">
-            <div class="view-left">
-            <h1 @click="dec('lishena-1')" @click.right.prevent="inc('lishena-1')">自傷回数: <span id="lishena-1" class="counter">10</span></h1>
-            <h1 @click="dec('lishena-2')" @click.right.prevent="inc('lishena-2')">自傷回数: <span id="lishena-2" class="counter">10</span></h1>
-            <h1 @click="dec('lishena-3')" @click.right.prevent="inc('lishena-3')">自傷回数: <span id="lishena-3" class="counter">10</span></h1>
-            <h1 @click="dec('lishena-4')" @click.right.prevent="inc('lishena-4')">自傷回数: <span id="lishena-4" class="counter">10</span></h1>
+            <div id="necromancer" role="tabpanel" class="tab-pane fade in active">
+                5
             </div>
-            <div class="view-left">
-            <h1 @click="inc('lishena-2')" @click.right.prevent="dec('lishena-2')">自傷回数: <span id="lishena-2" class="counter">0</span></h1>
+
+            <div id="vampire" role="tabpanel" class="tab-pane fade in active">
+                <h1 @click="inc('jishou')" @click.right.prevent="dec('jishou')">自傷回数: <span id="jishou" class="counter">0</span></h1>
+            </div>
+
+            <div id="bishop" role="tabpanel" class="tab-pane fade in active">
+                7
+            </div>
+
+            <div id="nemesis" role="tabpanel" class="tab-pane fade in active">
+                <div class="view-left">
+                <h1 @click="dec('lishena-1')" @click.right.prevent="inc('lishena-1')">自傷回数: <span id="lishena-1" class="counter">10</span></h1>
+                <h1 @click="dec('lishena-2')" @click.right.prevent="inc('lishena-2')">自傷回数: <span id="lishena-2" class="counter">10</span></h1>
+                <h1 @click="dec('lishena-3')" @click.right.prevent="inc('lishena-3')">自傷回数: <span id="lishena-3" class="counter">10</span></h1>
+                <h1 @click="dec('lishena-4')" @click.right.prevent="inc('lishena-4')">自傷回数: <span id="lishena-4" class="counter">10</span></h1>
+                </div>
+                <div class="view-left">
+                <h1 @click="inc('lishena-2')" @click.right.prevent="dec('lishena-2')">自傷回数: <span id="lishena-2" class="counter">0</span></h1>
+                </div>
             </div>
         </div>
 
@@ -83,6 +87,8 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="js/script.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
 </body>
