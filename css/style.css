@@ -5,7 +5,7 @@ html {
 body {
     background-color: #1e1e1e !important;
     color: #c0c0c0 !important;
-    height: 100%;
+    /* height: 100%; */
     font-family: "Sawarabi Gothic", sans-serif !important;
     user-select: none;
     -moz-user-select: none;
@@ -15,10 +15,18 @@ hr {
     background-color: #c0c0c0 !important;
 }
 
+small a {
+    color: #c0c0c0 !important;
+}
+
+small a:focus {
+    outline: 0;
+}
+
 .header {
     display: flex;
-    justify-content: space-around;
-    width: 60%;
+    justify-content: space-between;
+    width: 80%;
     margin: 50px auto 0 auto;
     animation: opac 0.8s;
 }
@@ -36,6 +44,10 @@ hr {
     animation: highlight 0.3s;
 }
 
+.header a:focus {
+    outline: 0;
+}
+
 .home {
     display: block;
     animation: opac 0.8s;
@@ -49,30 +61,15 @@ hr {
 }
 
 .view {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    max-width: 50%;
-	display: none;
+    margin-top: 5%;
 }
 
 .counter {
     margin-left: auto;
 }
 
-.view-left {
-    display: inline;
-    margin-right: 10%;
-    float: left;
-}
-
-.view-right {
-    display: inline;
-    margin-left: 10%;
-    float: right;
-}
-
 .reset {
+    margin-top: 5%;
     text-align: center;
     animation: opac 0.8s;
 }

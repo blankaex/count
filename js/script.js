@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-        message: 'Count'
+        title: 'Count'
     },
 	methods: {
 		inc: function(id) {
@@ -14,7 +14,10 @@ var app = new Vue({
 		reset: function() {
             var counters = document.getElementsByClassName("counter")
             for(i = 0; i < counters.length; i++)
-                counters[i].innerText = 0
+                if(counters[i].id.includes('lishena'))
+                    counters[i].innerText = 10
+                else
+                    counters[i].innerText = 0
 		}
   	}
 })

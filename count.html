@@ -11,7 +11,7 @@
 
 <body>
     <div id="app" class="container" @click.right.prevent>
-        <ul class="header nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
+        <ul class="header nav nav-pills nav-justified fade show" role="tablist" data-tabs="tabs">
             <li><a href="#neutral" data-toggle="tab"><img src="img/neutral.png"></a></li>
             <li><a href="#elf" data-toggle="tab"><img src="img/elf.png"></a></li>
             <li><a href="#royal" data-toggle="tab"><img src="img/royal.png"></a></li>
@@ -23,19 +23,24 @@
             <li><a href="#nemesis" data-toggle="tab"><img src="img/nemesis.png"></a></li>
         </ul>
 
+        <div id=reset class="reset fade show" @click="reset">
+            <h2>リセット</h2>
+        </div>
+
         <div class="tab-content">
-            <div id="neutral" role="tabpanel" class="tab-pane fade show active text-center home">
-                <h1>{{ message }}</h1>
+            <div id="neutral" role="tabpanel" class="home tab-pane fade show active text-center">
+                <h1>{{ title }}</h1>
                 <hr>
+                <small><a href="https://github.com/blankaex/count">By Blankaex</a></small>
             </div>
 
-            <div id="elf" role="tabpanel" class="tab-pane fade  text-center">
+            <div id="elf" role="tabpanel" class="view tab-pane fade text-center">
                 <div @click="inc('fairy')" @click.right.prevent="dec('fairy')">
 					<h1>フェアリー枚数: <span id="fairy" class="counter">0</span></h1>
 				</div>
             </div>
 
-            <div id="royal" role="tabpanel" class="tab-pane fade  text-center">
+            <div id="royal" role="tabpanel" class="view tab-pane fade text-center">
                 <div @click="inc('kubikazari')" @click.right.prevent="dec('kubikazari')">
                     <h1>首飾り枚数: <span id="kubikazari" class="counter">0</span></h1>
                 </div>
@@ -50,41 +55,33 @@
                 </div>
             </div>
 
-            <div id="witch" role="tabpanel" class="tab-pane fade">
-                3
+            <div id="witch" role="tabpanel" class="view tab-pane fade text-center">
+                <h1>数えるもんなくね？</h1>
             </div>
 
-            <div id="dragon" role="tabpanel" class="tab-pane fade">
+            <div id="dragon" role="tabpanel" class="view tab-pane fade text-center">
                 <h1 @click="inc('toiki')" @click.right.prevent="dec('toiki')">吐息枚数: <span id="toiki" class="counter">0</span></h1>
             </div>
 
-            <div id="necromancer" role="tabpanel" class="tab-pane fade">
-                5
+            <div id="necromancer" role="tabpanel" class="view tab-pane fade text-center">
+                <h1>数えるもんなくね？</h1>
             </div>
 
-            <div id="vampire" role="tabpanel" class="tab-pane fade">
+            <div id="vampire" role="tabpanel" class="view tab-pane fade text-center">
                 <h1 @click="inc('jishou')" @click.right.prevent="dec('jishou')">自傷回数: <span id="jishou" class="counter">0</span></h1>
             </div>
 
-            <div id="bishop" role="tabpanel" class="tab-pane fade">
-                7
+            <div id="bishop" role="tabpanel" class="view tab-pane fade text-center">
+                <h1>数えるもんなくね？</h1>
             </div>
 
-            <div id="nemesis" role="tabpanel" class="tab-pane fade">
-                <div class="view-left">
-                <h1 @click="dec('lishena-1')" @click.right.prevent="inc('lishena-1')">自傷回数: <span id="lishena-1" class="counter">10</span></h1>
-                <h1 @click="dec('lishena-2')" @click.right.prevent="inc('lishena-2')">自傷回数: <span id="lishena-2" class="counter">10</span></h1>
-                <h1 @click="dec('lishena-3')" @click.right.prevent="inc('lishena-3')">自傷回数: <span id="lishena-3" class="counter">10</span></h1>
-                <h1 @click="dec('lishena-4')" @click.right.prevent="inc('lishena-4')">自傷回数: <span id="lishena-4" class="counter">10</span></h1>
-                </div>
-                <div class="view-right">
-                <h1 @click="inc('lishena-2')" @click.right.prevent="dec('lishena-2')">人形枚数: <span id="lishena-2" class="counter">0</span></h1>
-                </div>
+            <div id="nemesis" role="tabpanel" class="view tab-pane fade text-center">
+                <h1 @click="dec('lishena-1')" @click.right.prevent="inc('lishena-1')">白1枚目: <span id="lishena-1" class="counter">10</span></h1>
+                <h1 @click="dec('lishena-2')" @click.right.prevent="inc('lishena-2')">黒1枚目: <span id="lishena-2" class="counter">10</span></h1>
+                <h1 @click="dec('lishena-3')" @click.right.prevent="inc('lishena-3')">白2枚目: <span id="lishena-3" class="counter">10</span></h1>
+                <h1 @click="dec('lishena-4')" @click.right.prevent="inc('lishena-4')">黒2枚目: <span id="lishena-4" class="counter">10</span></h1>
+                <h1 @click="inc('ningyou')" @click.right.prevent="dec('ningyou')">人形枚数: <span id="ningyou" class="counter">0</span></h1>
             </div>
-        </div>
-
-        <div id=reset class="reset" @click="reset">
-            <h1>リセット</h1>
         </div>
     </div>
 
