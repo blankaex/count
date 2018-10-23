@@ -72,7 +72,7 @@ small a:focus {
     display: none;
     margin-top: 5%;
     text-align: center;
-    animation: opac 0.8s;
+    /* animation: opac 0.8s; */
 }
 
 @keyframes opac {
