@@ -69,6 +69,7 @@ small a:focus {
 }
 
 .reset {
+    display: none;
     margin-top: 5%;
     text-align: center;
     animation: opac 0.8s;

@@ -12,27 +12,29 @@
 <body>
     <div id="app" class="container" @click.right.prevent>
         <ul class="header nav nav-pills nav-justified fade show" role="tablist" data-tabs="tabs">
-            <li><a href="#neutral" data-toggle="tab"><img src="img/neutral.png"></a></li>
-            <li><a href="#elf" data-toggle="tab"><img src="img/elf.png"></a></li>
-            <li><a href="#royal" data-toggle="tab"><img src="img/royal.png"></a></li>
-            <li><a href="#witch" data-toggle="tab"><img src="img/witch.png"></a></li>
-            <li><a href="#dragon" data-toggle="tab"><img src="img/dragon.png"></a></li>
-            <li><a href="#necromancer" data-toggle="tab"><img src="img/necromancer.png"></a></li>
-            <li><a href="#vampire" data-toggle="tab"><img src="img/vampire.png"></a></li>
-            <li><a href="#bishop" data-toggle="tab"><img src="img/bishop.png"></a></li>
-            <li><a href="#nemesis" data-toggle="tab"><img src="img/nemesis.png"></a></li>
+            <!-- <li><a href="#neutral" data-toggle="tab" @click="view('neutral')"><img src="img/neutral.png"></a></li> -->
+            <li><a href="#elf" data-toggle="tab" @click="view('elf')"><img src="img/elf.png"></a></li>
+            <li><a href="#royal" data-toggle="tab" @click="view('royal')"><img src="img/royal.png"></a></li>
+            <li><a href="#witch" data-toggle="tab" @click="view('witch')"><img src="img/witch.png"></a></li>
+            <li><a href="#dragon" data-toggle="tab" @click="view('dragon')"><img src="img/dragon.png"></a></li>
+            <li><a href="#necromancer" data-toggle="tab" @click="view('necromancer')"><img src="img/necromancer.png"></a></li>
+            <li><a href="#vampire" data-toggle="tab" @click="view('vampire')"><img src="img/vampire.png"></a></li>
+            <li><a href="#bishop" data-toggle="tab" @click="view('bishop')"><img src="img/bishop.png"></a></li>
+            <li><a href="#nemesis" data-toggle="tab" @click="view('nemesis')"><img src="img/nemesis.png"></a></li>
         </ul>
 
-        <div id=reset class="reset fade show" @click="reset">
+        <div id="home" class="home text-center">
+            <h1>{{ title }}</h1>
+            <hr>
+            <small><a href="https://github.com/blankaex/count">By Blankaex</a></small>
+        </div>
+
+        <div id="reset" class="reset" @click="reset">
             <h2>リセット</h2>
         </div>
 
         <div class="tab-content">
-            <div id="neutral" role="tabpanel" class="home tab-pane fade show active text-center">
-                <h1>{{ title }}</h1>
-                <hr>
-                <small><a href="https://github.com/blankaex/count">By Blankaex</a></small>
-            </div>
+            <!-- <div id="neutral" role="tabpanel" class="home tab-pane fade show active text-center"> -->
 
             <div id="elf" role="tabpanel" class="view tab-pane fade text-center">
                 <div @click="inc('fairy')" @click.right.prevent="dec('fairy')">
