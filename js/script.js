@@ -16,6 +16,8 @@ var app = new Vue({
             for(i = 0; i < counters.length; i++)
                 if(counters[i].id.includes('lishena'))
                     counters[i].innerText = 10
+                else if(counters[i].id.includes('bayle'))
+                    counters[i].innerText = 7
                 else
                     counters[i].innerText = 0
 		},
@@ -38,6 +40,14 @@ var app = new Vue({
                 e.classList.add("active")
                 e.classList.add("show")
             }
+		},
+        disp: function(id) {
+            var curr = document.getElementById(id)
+            var panes = document.getElementsByClassName("sub-pane")
+            for(i = 0; i < panes.length; i++)
+                if(panes[i] != curr)
+                    panes[i].style.display = "none"
+            curr.style.display = "block"
         }
   	}
 })
